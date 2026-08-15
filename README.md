@@ -1,7 +1,7 @@
 # Data-Analyst-SQL-Internship-Task
 Cover of  internship criteria SQL queries using tool of PostgreSQL.
 
-##[LIMIT](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/LIMIT.sql)
+## [LIMIT](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/LIMIT.sql)
 
 
 ###  What this code means:
@@ -22,3 +22,90 @@ INSERT INTO: This line inserts or adds our list of 6 names into the table column
 SELECT * FROM customers: The star '*' means "show everything". This command asks to see all columns from our customer table.
 ORDER BY customer_id ASC: This sorts our data by ID number, starting from the smallest number to the biggest (1, 2, 3...).
 LIMIT 5: This tells the database to only show the top 5 rows. That is why the 6th customer ("Eli Korth") does not appear in the final screenshot output.
+
+
+## [LEFT JOIN](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/LEFT_JOIN.sql)
+
+##  Restaurant Orders Analysis
+
+This query connects restaurants with their orders to find total sales.
+
+###  What This Code Does:
+INSERT INTO: Adds 3 new orders into the database.
+LEFT JOIN: Connects restaurants and orders together.
+COUNT: Calculates total orders for each restaurant.
+GROUP BY: Groups the final counts by restaurant name.
+HAVING: Filters out locations with 30 or more orders.
+ORDER BY: Sorts the list from lowest orders to highest.
+
+### Reading the Results:
+* **Taco Fiesta** has **0** orders.
+* **Burger Express** has **1** order.
+* **Pizza Palace** has **2** orders.
+
+
+## [HAVING](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/HAVING.sql)
+# E-Commerce & Food Delivery SQL Analytics Project
+
+## Core Analytics Objectives
+* Data Management: Setting up clean tables with primary keys and data type limits.
+* Relational Connections: Linking transactions to profiles using Left Joins.
+* Business Intelligence: Using mathematical aggregation tools to calculate order counts and total revenues.
+* Performance Filtering: Applying sorting and conditional rules to highlight top-performing and underperforming locations.
+
+
+## Customer Database Initialization
+
+This section covers setting up the customer tracking infrastructure and verifying baseline data entry.
+
+###  Creating the Customers Table
+The project begins by setting up a dedicated table to house basic profile information for each registered client. 
+* A customer identity column is established using whole numbers. This column is locked as a primary key to guarantee that no two separate clients ever share an identical tracking number.
+* A text column is designated to store client names, with a strict limit holding up to fifty characters maximum to keep database storage clean and organized.
+
+###  Data Entry and Row Constraints
+Six mock client profiles are inserted into the system, including names like Alice Smith, Bob Jones, and Robber Korth. 
+* A verification query is executed to pull all columns from the table.
+* The system is instructed to sort the output chronologically by the customer identity number in ascending order, from lowest to highest.
+* A strict row restriction limit of five is applied to the extraction tool. Because of this boundary, the sixth client profile (Eli Korth) is hidden from the final visual output grid, demonstrating how to save computing power on massive tables.
+
+
+## Restaurant Order Volume Tracking
+
+This section focuses on connecting different structural data tables together to evaluate active transaction frequencies across restaurant locations.
+
+###  Creating the Orders Table
+An independent transaction logging table is established to map every individual purchase back to its origin.
+* A unique transaction identity key is assigned to every single incoming invoice.
+* A secondary restaurant tracking column is added to act as a bridge back to the business directory.
+* A dedicated calendar date column is applied to log the exact year, month, and day the food purchase occurred.
+
+### Relational Table Joining and Order Counting
+Three fresh food transactions are added to the ledger, mapping orders directly to restaurant reference numbers. 
+* The system connects the restaurant directory table directly to the transaction ledger table.
+* A left joining mechanism is selected for this connection. This specific connection type guarantees that every single restaurant brand remains visible in the final report, even if they currently possess zero active sales.
+* A counting function counts the total transaction records registered to each location name.
+* A grouping rule clusters individual database lines together by their identity and business names so the counting math applies correctly per location.
+* A secondary filtering constraint is introduced to show only locations that have accumulated fewer than thirty total orders.
+* The output organizes the final list in ascending order, placing the lowest order volumes at the very top. In the final grid, Taco Fiesta shows up with a count of zero, Burger Express shows up with one, and Pizza Palace displays two.
+
+##  Restaurant Revenue Performance Evaluation
+
+This final section analyzes raw transaction wealth to filter out underperforming locations based on total financial accumulation.
+
+###  Revenue Table Setup and Sales Ingestion
+A dedicated revenue reporting table is built containing columns for the restaurant name text, individual order identification numbers, and exact numeric decimal amounts for money transactions. Six large-scale sales transactions are populated across three brands: Dominos, Subway, and Burger King.
+
+###  Aggregating Wealth and Group Filtering
+A final optimization query is run to calculate exactly how much money each brand brought in.
+* A financial math tool sums up all individual transaction decimals into one combined total revenue value per brand.
+* The grouping engine concentrates the rows by the business text names so the calculation stays separate for each company.
+* A strict group performance boundary rule is applied to the final calculated sums. This boundary hides any business group that failed to generate more than five thousand in total sales.
+* The successful groups are sorted in descending order to showcase the top earners first.
+
+### Final Financial Results
+Only two major food brands successfully passed the financial performance benchmark:
+1. Burger King achieves the highest rank, securing a total revenue value of 5700.00.
+2. Dominos secures the second position close behind, displaying a total revenue value of 5600.00.
+
+
