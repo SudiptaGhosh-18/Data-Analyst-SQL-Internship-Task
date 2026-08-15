@@ -127,3 +127,25 @@ The overall average price is roughly 1.27. Only three items cleared this price t
 2. Kale at 1.71
 3. Broccoli at 1.28
 
+
+
+## [VIEW](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/VIEW.sql)
+
+##  Database Views: Active Orders Analysis
+
+This section covers population of the master transaction table and the creation of a virtual table (View) to streamline reporting for successful sales.
+
+###  What This Code:
+* **INSERT INTO**: Populates the master ledger with 6 unique transactions containing order ids, customer references, dates, purchase totals, and transaction states.
+* **CREATE VIEW**: Builds a permanent virtual table filter called `active_orders_view`. It stores the query logic without duplicating database storage space.
+* **WHERE**: Filters out pending and canceled invoices, focusing strictly on orders marked with a status of 'Completed'.
+* **SELECT FROM View**: Runs a standard extraction directly against the newly built virtual table rather than raw columns.
+
+### Reading the Results:
+Only three transaction records successfully passed the 'Completed' status rule:
+1. **Order 101**: Linked to Customer 1 with an amount of 1500
+2. **Order 102**: Linked to Customer 2 with an amount of 3000
+3. **Order 104**: Linked to Customer 4 with an amount of 5000
+
+
+
