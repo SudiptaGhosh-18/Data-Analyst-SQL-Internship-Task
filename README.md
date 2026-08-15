@@ -149,3 +149,22 @@ Only three transaction records successfully passed the 'Completed' status rule:
 
 
 
+
+## [NULL](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/NULL.sql)
+
+##  Handling Missing Data: Null Values Analysis
+
+This section explores how to isolate missing, empty, or unrecorded numerical data within the transaction table.
+
+###  What This Code:
+* **INSERT INTO**: Populates the database ledger with 6 mock order rows. Notice that Order 106 is inserted with a `NULL` value in its amount column instead of a number.
+* **SELECT * FROM**: Requests all column values for rows that match the filtering constraint.
+* **WHERE amount IS NULL**: Looks specifically for rows where the purchase amount was left blank or unspecified. Regular matching operators like `=` do not work on blank records, making `IS NULL` mandatory.
+
+###  Reading the Results:
+The execution filters out all standard numerical sales data and successfully highlights the single incomplete transaction:
+* **Order 106** (Placed by Customer 5 on 2026-01-22) is caught because its amount field shows **[null]** and its status rests as **Pending**. 
+
+
+
+
