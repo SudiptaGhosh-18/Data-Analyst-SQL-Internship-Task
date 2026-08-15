@@ -103,9 +103,27 @@ A final optimization query is run to calculate exactly how much money each brand
 * A strict group performance boundary rule is applied to the final calculated sums. This boundary hides any business group that failed to generate more than five thousand in total sales.
 * The successful groups are sorted in descending order to showcase the top earners first.
 
+
 ### Final Financial Results
 Only two major food brands successfully passed the financial performance benchmark:
 1. Burger King achieves the highest rank, securing a total revenue value of 5700.00.
 2. Dominos secures the second position close behind, displaying a total revenue value of 5600.00.
 
+
+## [SUBQUERY](https://github.com/SudiptaGhosh-18/Data-Analyst-SQL-Internship-Task/blob/main/SUB.sql)
+
+##  Food Item Price Subquery Analysis
+
+###  What This Code :
+* CREATE TABLE: Sets up a table to hold food item names and their exact prices using decimals.
+* INSERT INTO: Adds 5 distinct food items with prices ranging from 0.52 to 2.14.
+* Subquery: Uses a nested query to calculate the average price of all 5 entries automatically.
+* WHERE: Filters out any item that costs less than or equal to that calculated average price.
+* ORDER BY DESC: Arranges the final items from the highest price down to the lowest.
+
+### Reading the Results:
+The overall average price is roughly 1.27. Only three items cleared this price threshold:
+1. Frozen Berries at 2.14
+2. Kale at 1.71
+3. Broccoli at 1.28
 
